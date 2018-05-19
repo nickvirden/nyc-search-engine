@@ -1,13 +1,22 @@
-import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 
-import {AppComponent} from './app.component';
-import {HttpClientModule} from '@angular/common/http';
-import {UsersListComponent} from './users-list/users-list.component';
-import {UsersService} from './users.service';
-import {RouterModule, Routes} from '@angular/router';
-import {NewUserFormComponent} from './new-user-form/new-user-form.component';
-import {FormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+
+import { AppComponent } from './app.component';
+
+import { UsersListComponent } from './components/users-list/users-list.component';
+import { UsersDetailComponent } from './components/users-detail/users-detail.component';
+import { NewUserFormComponent } from './components/new-user-form/new-user-form.component';
+import { ResultsListComponent } from './components/results-list/results-list.component';
+import { SearchComponent } from './components/search/search.component';
+
+import { UsersService } from './services/users.service';
+import { SearchService } from './services/search.service';
+
+import { UsersRoutingModule } from './components/users-routing.module';
 
 const routes: Routes = [
   {
@@ -24,19 +33,23 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     UsersListComponent,
-    NewUserFormComponent
+    NewUserFormComponent,
+    ResultsListComponent,
+    SearchComponent,
+    UsersDetailComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     HttpClientModule,
-    RouterModule.forRoot(routes),
-    FormsModule
+    UsersRoutingModule, // Must come before root because routes are loaded in order
+    RouterModule.forRoot(routes)
   ],
   providers: [
-    UsersService
+    UsersService,
+    SearchService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ]
 })
 
-export class AppModule {
-}
+export class AppModule { }

@@ -16,14 +16,18 @@ public class User {
 	@Column(name = "USER_NAME")
 	private String userName;
 
+	@Column(name = "EMAIL")
+	private String email;
+
 	@Column(name = "FIRST_NAME")
 	private String firstName;
 
 	@Column(name = "LAST_NAME")
 	private String lastName;
 
-	public User(String userName, String firstName, String lastName) {
+	public User(String userName, String email, String firstName, String lastName) {
 		this.userName = userName;
+		this.email = email;
 		this.firstName = firstName;
 		this.lastName = lastName;
 	}

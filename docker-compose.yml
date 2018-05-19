@@ -38,13 +38,13 @@ services:
         environment:
           - GRADLE_USER_HOME=cache
           - SPRING_PROFILES_ACTIVE=dev
-  ui:
+  frontend:
     image: johnpapa/angular-cli
     ports:
       - "4200:4200"
-    working_dir: /tunr-ui
+    working_dir: /frontend
     volumes:
-      - ./tunr-ui:/tunr-ui
+      - ./frontend:/frontend
     command: "npm start"
   postgresdev:
       image: postgres
@@ -54,3 +54,9 @@ services:
        - POSTGRES_PASSWORD=password
        - POSTGRES_USER=postgres
        - POSTGRES_DB=pgdev
+  flyway:
+      image: jimmyoak/flyway:4.0.3
+      command: "wait-for-it --timeout=30 --strict postgres:5432 -- flyway migrate"
+      volumes:
+        - './flyway/conf:/flyway/conf'
+        - './flyway/sql:/flyway/sql'
