@@ -17,7 +17,7 @@
 *.iml
 *.ipr
 /out/
-/**/cache/wrapper
+/**/cache/
 
 ### NetBeans ###
 /nbproject/private/

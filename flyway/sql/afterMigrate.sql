@@ -1,6 +1,6 @@
 #  USERNAME, EMAIL, FIRST_NAME, LAST_NAME
 INSERT INTO Users VALUES
-	('rickandmorty', 'rickandmorty@gmail.com', 'Rick Morty', 'Rick', 'Morty'),
-	('heezayouser@hotmail.com', 'Heeza Yousef', 'Heeza', 'Yousef'),
-	('yeezus@kanye.com', 'Kanye West', 'Kanye', 'West'),
-	('stirfryshortfry@migos.net', 'Quavo Takeoff-Offset', 'Quavo', 'Takeoff-Offset')
+	(0, 'rickandmorty', 'rickandmorty@gmail.com', 'Rick', 'Morty'),
+	(1, 'heezayouser@hotmail.com', 'Heeza', 'Yousef'),
+	(2, 'yeezus@kanye.com', 'Kanye', 'West'),
+	(3, 'stirfryshortfry@migos.net', 'Quavo', 'Takeoff-Offset')
