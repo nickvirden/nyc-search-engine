@@ -1,7 +1,7 @@
-import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
-import {User} from '../types/user';
+import { User } from '../types/user';
 
 @Injectable()
 export class UsersService {
@@ -17,6 +17,10 @@ export class UsersService {
 
   getUsers() {
     return this.httpClient.get<User[]>('/api/users');
+  }
+
+  getUser(userId) {
+    return this.httpClient.get<User>('/api/users/${userId}');
   }
 
   deleteUser(userId: string) {
