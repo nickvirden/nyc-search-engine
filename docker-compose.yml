@@ -38,14 +38,14 @@ services:
         environment:
           - GRADLE_USER_HOME=cache
           - SPRING_PROFILES_ACTIVE=dev
-  frontend:
-    image: johnpapa/angular-cli
-    ports:
-      - "4200:4200"
-    working_dir: /frontend
-    volumes:
-      - ./frontend:/frontend
-    command: "npm start"
+  # frontend:
+  #   image: johnpapa/angular-cli
+  #   ports:
+  #     - "4200:4200"
+  #   working_dir: /frontend
+  #   volumes:
+  #     - ./frontend:/frontend
+  #   command: "npm start"
   postgresdev:
       image: postgres
       ports:
