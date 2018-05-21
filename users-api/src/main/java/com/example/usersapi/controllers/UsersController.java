@@ -37,7 +37,7 @@ public class UsersController {
 
 	@PostMapping("/")
 	public User createNewUser(@RequestBody User newUser) {
-		System.out.println("FIrst name is: " + newUser.getFirstName());
+		System.out.println("First name is: " + newUser.getFirstName());
 		return userRepository.save(newUser);
 	}
 
