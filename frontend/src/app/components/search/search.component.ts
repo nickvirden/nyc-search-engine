@@ -40,11 +40,7 @@ export class SearchComponent implements OnInit {
 
 	removeFromSearchCriteria(value) {
 		let indexOfValue;
-		indexOfValue = this.select.forEach((element, index) => {
-			if(element === value) {
-				return index;
-			}
-		});
+		indexOfValue = this.select.indexOf(value);
 		this.select.splice(indexOfValue, 1);
 	}
 
