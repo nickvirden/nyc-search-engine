@@ -8,7 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 
 import { UsersListComponent } from './components/users-list/users-list.component';
-import { UsersDetailComponent } from './components/users-detail/users-detail.component';
+import { UserPageComponent } from './components/user-page/user-page.component';
 import { NewUserFormComponent } from './components/new-user-form/new-user-form.component';
 import { ResultsListComponent } from './components/results-list/results-list.component';
 import { SearchComponent } from './components/search/search.component';
@@ -36,7 +36,7 @@ const routes: Routes = [
     NewUserFormComponent,
     ResultsListComponent,
     SearchComponent,
-    UsersDetailComponent
+    UserPageComponent
   ],
   imports: [
     BrowserModule,
