@@ -14,11 +14,15 @@ import { UsersService } from '../../services/users.service';
 export class UsersDetailComponent implements OnInit {
 
 	user: any;
+	userId: number;
 
-	constructor(private usersService: UsersService ) { }
+	constructor(private usersService: UsersService, private activatedRoute: ActivatedRoute ) { }
 
 	ngOnInit() {
-		this.user = this.usersService.getUsers();
+		this.activatedRoute.params.forEach(param => this.userId = parseInt(param.id, 10));
+		this.usersService.getUser(this.userId).subscribe(response => {
+			this.user = response;
+		});
 	}
 
 }
