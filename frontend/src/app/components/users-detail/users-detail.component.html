@@ -1,3 +1,9 @@
-<p>
-  users-detail works!
-</p>
+<div *ngIf="user">
+	<div>
+		<h2>Welcome {{ user.userName }}!</h2>
+	</div>
+	{{ user.firstName }}
+	{{ user.lastName }}
+	{{ user.email }}
+	{{ user.userName }}
+</div>

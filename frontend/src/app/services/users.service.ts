@@ -20,7 +20,7 @@ export class UsersService {
   }
 
   getUser(userId) {
-    return this.httpClient.get<User>('/api/users/${userId}');
+    return this.httpClient.get(`/api/users/${userId}`);
   }
 
   deleteUser(userId: string) {
