@@ -20,8 +20,8 @@ export class UsersService {
     return this.httpClient.post<User>('/api/users', user);
   }
 
-  updateUser(userId, data) {
-    return this.httpClient.put(`/api/users/${userId}`, data);
+  updateUser(userId, user: User) {
+    return this.httpClient.patch(`/api/users/${userId}`, user);
   }
 
   deleteUser(userId: string) {

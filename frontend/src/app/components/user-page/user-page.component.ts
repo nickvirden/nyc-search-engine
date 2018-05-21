@@ -28,8 +28,8 @@ export class UserPageComponent implements OnInit {
 		});	
 	}
 
-	updateUser(userId, data) {
-	    this.usersService.updateUser(userId, data)
+	updateUser(userId, userData) {
+	    this.usersService.updateUser(userId, userData)
 	    	.subscribe((response) => {
 	    		this.success = true;
 	    		setTimeout(() => {

@@ -56,9 +56,9 @@ public class UsersController {
 			throw new NotFoundException("User with ID of " + userId + " was not found!");
 		}
 
-		userFromDb.setUserName(userRequest.getUserName());
 		userFromDb.setFirstName(userRequest.getFirstName());
 		userFromDb.setLastName(userRequest.getLastName());
+		userFromDb.setEmail(userRequest.getEmail());
 
 		return userRepository.save(userFromDb);
 	}

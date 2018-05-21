@@ -5,11 +5,31 @@
 	</div>
 	<div class="row">
 		<div class="card center col s12 m8 l6 push-m2 push-l3">
-			<h4>{{ user.firstName }} {{ user.lastName }}</h4>
-			<div>{{ user.email }}</div>
-			<div>{{ user.userName }}</div>
+			<div class="card-content">
+				<span class="card-title activator grey-text text-darken-4"><i class="material-icons right">edit</i></span>
+				<h4>{{ user.firstName }} {{ user.lastName }}</h4>
+				<div>{{ user.email }}</div>
+				<div>{{ user.userName }}</div>
+			</div>
+			<div class="card-reveal">
+				<span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i>Edit Information</span>
+				<div class="row">
+					<div class="input-field col s12">
+						<input placeholder="First Name" id="first-name" type="text" [(ngModel)]="user.firstName">
+					</div>
+					<div class="input-field col s12">
+						<input placeholder="Last Name" id="last-name" type="text" [(ngModel)]="user.lastName">
+					</div>
+					<div class="input-field col s12">
+						<input placeholder="Email" id="email" type="text" [(ngModel)]="user.email">
+					</div>
+					<div>
+						<a id="update-contact-information" class="btn" (click)="updateUser(user.id, user)">Save</a>
+					</div>
+				</div>
+				<div *ngIf="success">Your information was updated successfully!</div>
+			</div>
 		</div>
-		<div *ngIf="success">Your information was updated successfully!</div>
 	</div>
 	<app-search></app-search>
 </div>
