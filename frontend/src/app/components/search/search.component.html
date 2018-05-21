@@ -1,12 +1,60 @@
 <section>
-  	<h2>What's the Weather Where You're At?</h2>
-  
-  	<input [(ngModel)]="zip" (keyup)="findWeather(zip)" type="text" placeholder="Zip Code Here"/>
-  	<input (click)="findWeather(zip)" type="submit" value="Search"/>
+  	<h3 class="center">Begin Your Search</h3>
 
-  	<section *ngIf="weather">
+  	<div class="row">
+  		<div class="input-field col s12">
+			<select multiple>
+				<option value="" disabled selected>Choose your data</option>
+				<option value="request_id">Request ID</option>
+				<option value="start_date">Start Date</option>
+				<option value="end_date">End Date</option>
+				<option value="agency_name">Agency Name</option>
+				<option value="type_of_notice_description">Type of Notice Description</option>
+				<option value="category_description">Category Description</option>
+				<option value="short_title">Short Title</option>
+				<option value="selection_method_description">Selection Method Description</option>
+				<option value="section_name">section_name</option>
+				<option value="special_case_reason_description">Special Case Reason Description</option>
+				<option value="pin">Pin</option>
+				<option value="due_date">Due Date</option>
+				<option value="address_to_request">Address to Request</option>
+				<option value="contact_name">Contact Name</option>
+				<option value="contact_phone">Contact Phone</option>
+				<option value="email">Email</option>
+				<option value="contract_amount">Contract Amount</option>
+				<option value="contact_fax">Contact Fax</option>
+				<option value="additional_description_1">Additional Description 1</option>
+				<option value="additional_description_2">Additional Description 2</option>
+				<option value="additional_description_3">Additional Description 3</option>
+				<option value="other_info_1">Other Info 1</option>
+				<option value="other_info_2">Other Info 2</option>
+				<option value="other_info_3">Other Info 3</option>
+				<option value="vendor_name">Vendor Name</option>
+				<option value="vendor_address">Vendor Address</option>
+				<option value="printout_1">Printout 1</option>
+				<option value="printout_2">Printout 2</option>
+				<option value="printout_3">Printout _3</option>
+				<option value="event_date">Event Date</option>
+				<option value="document_links">Document Links</option>
+				<option value="document_links_description">Document Links Description</option>
+				<option value="building_name">Building Name</option>
+				<option value="street_address_1">Street Address 1</option>
+				<option value="street_address_2">Street Address 2</option>
+				<option value="city">City</option>
+				<option value="state">State</option>
+				<option value="zip_code">Zip Code</option>
+			</select>
+			<label>Materialize Multiple Select</label>
+		</div>
+  	</div>
+  	
+  	<div>
+  		<a class="btn" (click)="searchCityRecords(paramObject)">Search</a>
+  	</div>
+
+  	<div *ngIf="weather">
 		<h3>Here's the weather in {{weather.name}}:</h3>
 		<p>Currently {{weather.weather[0].description}}.</p>
 		<p>There's a high of {{weather.main.temp_max}} degrees and a low of {{weather.main.temp_min}} degrees.</p>
-	</section>
+	</div>
 </section>

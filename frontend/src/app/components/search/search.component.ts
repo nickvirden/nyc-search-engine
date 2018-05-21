@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Http } from '@angular/http';
-import { Subject } from 'rxjs';
-import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 
 import { SearchService } from '../../services/search.service';
 
@@ -13,27 +11,33 @@ import { SearchService } from '../../services/search.service';
 })
 export class SearchComponent implements OnInit {
 
-	weather: any;
-	searchSubject = new Subject();
+	select: string;
+	where: string;
+	order: string;
+	group: string;
+	having: string;
+	limit: string;
+	offset: string;
+	paramObject: any = {
+		select: this.select,
+		where: this.where,
+		order: this.order,
+		group: this.group,
+		having: this.having,
+		limit: this.limit,
+		offset: this.offset,
+	};
+	data: any;
 
 	constructor( private searchService: SearchService ) { }
 
-	ngOnInit() {
-		// As soon as you subscribe to something, you're talking to an observable
-		this.searchSubject
-			.pipe(debounceTime(1000))
-			.pipe(distinctUntilChanged())
-			.subscribe(zip => 
-				this.searchService.createAPI(zip)
-					.subscribe(response => 
-						this.weather = response.json()
-					)
-			);
-	}
+	ngOnInit() { }
 
-	findWeather(zip) {
-		// Every time the zipCode changes, the app publishes an event
-		this.searchSubject.next(zip);
+	searchCityRecords(paramObject) {
+		this.searchService.retrieveData(paramObject)
+			.subscribe(response => 
+				this.data = response.json()
+			);
 	}
 
 }

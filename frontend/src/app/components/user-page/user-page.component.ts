@@ -7,11 +7,11 @@ import { Subject } from 'rxjs';
 import { UsersService } from '../../services/users.service';
 
 @Component({
-  selector: 'app-users-detail',
-  templateUrl: './users-detail.component.html',
-  styleUrls: ['./users-detail.component.css']
+  selector: 'app-user-page',
+  templateUrl: './user-page.component.html',
+  styleUrls: ['./user-page.component.css']
 })
-export class UsersDetailComponent implements OnInit {
+export class UserPageComponent implements OnInit {
 
 	user: any;
 	userId: number;
@@ -22,7 +22,7 @@ export class UsersDetailComponent implements OnInit {
 		this.activatedRoute.params.forEach(param => this.userId = parseInt(param.id, 10));
 		this.usersService.getUser(this.userId).subscribe(response => {
 			this.user = response;
-		});
+		});	
 	}
 
 }
