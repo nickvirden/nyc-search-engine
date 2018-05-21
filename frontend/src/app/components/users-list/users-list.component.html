@@ -1,26 +1,40 @@
-<div id="users-wrapper">
-  <h1>Users</h1>
-  <a id="new-user-link" routerLink="/new">Create User</a>
+<div id="users-wrapper" style="margin-top: 5px">
+    <div class="row">
+        <div class="col s12 m6 push-m3">
+            <div class="card" *ngFor="let user of users; index as i">
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">{{ user.userName }}<i class="material-icons right">more_vert</i></span>
+                    
+                    <a id="delete-user-{{user.id}}" class="btn green" routerLink="/users/{{ user.id }}">
+                        Go to Profile
+                    </a>
 
-  <div *ngFor="let user of users; index as i">
-    <div id={{user.id}} data-user-display>
-      <div id="user-{{user.id}}-user-name">
-        {{user.userName}}
-      </div>
-
-      <div id="user-{{user.id}}-first-name">
-        {{user.firstName}}
-      </div>
-
-      <div id="user-{{user.id}}-last-name">
-        {{user.lastName}}
-      </div>
-
-      <button
-        id="delete-user-{{user.id}}"
-        (click)="deleteUser(user.id, i)">
-        Delete
-      </button>
+                    <a id="delete-user-{{user.id}}" class="btn-flat" (click)="deleteUser(user.id, i)">
+                        Delete
+                    </a>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i>{{ user.userName }}</span>
+                    
+                    <div id="{{ user.id }}" data-user-display>
+                        <div>
+                            <b>Name: </b>
+                            <span id="user-{{ user.id }}-first-name">
+                                {{user.firstName}}
+                            </span>
+                            <span id="user-{{ user.id }}-last-name">
+                                {{user.lastName}}
+                            </span>
+                        </div>
+                        <div>
+                            <b>Email: </b>
+                            <span id="user-{{ user.id }}-email">
+                                {{ user.email }}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 </div>

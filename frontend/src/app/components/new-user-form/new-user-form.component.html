@@ -1,38 +1,42 @@
-<form id="new-user-form" (ngSubmit)="createUser()">
+<div class="row">
+    <h2 class="center">Create New User</h2>
+    <div id="new-user-form" class="col s12 m8 l6 push-m2 push-l3">
 
-  <div>
-    <label for="new-user-user-name">Username </label>
-    <input
-      id="new-user-user-name"
-      type="text"
-      name="userName"
-      [(ngModel)]="user.userName" />
-  </div>
+        <div class="input-field">
+            <input
+                id="new-user-user-name"
+                type="text"
+                name="userName"
+                [(ngModel)]="user.userName"
+            />
+            <label for="new-user-user-name">Username</label>
+        </div>
 
-  <div>
-    <label for="new-user-first-name">First Name </label>
-    <input
-      id="new-user-first-name"
-      type="text"
-      name="firstName"
-      [(ngModel)]="user.firstName" />
-  </div>
+        <div class="input-field">
+            <input
+                id="new-user-first-name"
+                type="text"
+                name="firstName"
+                [(ngModel)]="user.firstName"
+            />
+            <label for="new-user-first-name">First Name</label>
+        </div>
 
-  <div>
-    <label for="new-user-last-name">Last Name </label>
-    <input
-      id="new-user-last-name"
-      type="text"
-      name="lastName"
-      [(ngModel)]="user.lastName" />
-  </div>
+        <div class="input-field">
+            <input
+                id="new-user-last-name"
+                type="text"
+                name="lastName"
+                [(ngModel)]="user.lastName"
+            />
+            <label for="new-user-last-name">Last Name</label>
+        </div>
 
-  <div>
-    <input
-      id="new-user-submit"
-      type="submit"
-      value="Create"
-      />
-  </div>
+        <div>
+            <a id="new-user-submit" class="btn" (click)="createUser()">
+                Create
+            </a>
+        </div>
 
-</form>
+    </div>
+</div>

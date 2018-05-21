@@ -1,6 +1,7 @@
-<div *ngIf="user">
+<div *ngIf="user" class="container">
 	<div class="center">
-		<h1>Welcome {{ user.userName }}!</h1>
+		<h1 class="hide-on-small-only">Welcome, {{ user.userName }}!</h1>
+		<h3 class="hide-on-med-and-up">Welcome, {{ user.userName }}!</h3>
 	</div>
 	<div class="row">
 		<div class="card center col s12 m8 l6 push-m2 push-l3">
@@ -8,6 +9,7 @@
 			<div>{{ user.email }}</div>
 			<div>{{ user.userName }}</div>
 		</div>
+		<div *ngIf="success">Your information was updated successfully!</div>
 	</div>
 	<app-search></app-search>
 </div>

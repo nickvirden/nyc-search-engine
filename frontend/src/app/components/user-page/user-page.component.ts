@@ -17,6 +17,7 @@ export class UserPageComponent implements OnInit {
 
 	user: any;
 	userId: number;
+	success: boolean = false;
 
 	constructor(private usersService: UsersService, private activatedRoute: ActivatedRoute ) { }
 
@@ -25,6 +26,16 @@ export class UserPageComponent implements OnInit {
 		this.usersService.getUser(this.userId).subscribe(response => {
 			this.user = response;
 		});	
+	}
+
+	updateUser(userId, data) {
+	    this.usersService.updateUser(userId, data)
+	    	.subscribe((response) => {
+	    		this.success = true;
+	    		setTimeout(() => {
+	    			this.success = false;
+	    		}, 3000);
+      		});
 	}
 
 }

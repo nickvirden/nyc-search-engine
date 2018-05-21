@@ -1,3 +1,19 @@
 <div>
-  <router-outlet></router-outlet>
+	<nav>
+		<div class="nav-wrapper">
+			<a href="#" class="brand-logo">
+				<img class="hide-on-small-only" src="../assets/images/nyccas.png" />
+				<img class="hide-on-med-and-up" src="../assets/images/nyccas-mobile.png" />
+			</a>
+			<ul id="nav-mobile" class="right hide-on-med-and-down">
+				<li>
+					<a routerLink="/">Home</a>
+				</li>
+				<li>
+					<a routerLink="/new">Create New User</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+  	<router-outlet></router-outlet>
 </div>
