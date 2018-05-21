@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class SearchService {
 
-	constructor(private http: Http) { }
+	constructor(private httpClient: HttpClient) { }
 
 	retrieveData(paramObject) {
-		return this.http.get(`https://data.cityofnewyork.us/resource/`);
+		return this.httpClient.get(`https://data.cityofnewyork.us/resource/`);
 	}
 }

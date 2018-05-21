@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { MaterializeModule } from 'angular2-materialize/dist/materialize-module';
 
 import { AppComponent } from './app.component';
 
@@ -42,6 +43,7 @@ const routes: Routes = [
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    MaterializeModule,
     UsersRoutingModule, // Must come before root because routes are loaded in order
     RouterModule.forRoot(routes)
   ],

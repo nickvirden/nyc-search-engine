@@ -1,0 +1,21 @@
+.criteria-field {
+	margin-top: 0px;
+}
+
+#add-more-criteria {
+	position: relative;
+	height: 5px;
+	margin: 5px;
+}
+
+#add-more-criteria > div {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translate(-50%, 0);
+}
+
+.dropdown-content li > a,
+.dropdown-content li > span {
+	color: #343434;
+}

@@ -11,8 +11,8 @@ import { SearchService } from '../../services/search.service';
 })
 export class SearchComponent implements OnInit {
 
-	select: string;
-	where: string;
+	select: string[] = ['yey'];
+	where: string[];
 	order: string;
 	group: string;
 	having: string;
@@ -28,16 +28,29 @@ export class SearchComponent implements OnInit {
 		offset: this.offset,
 	};
 	data: any;
+	searchCriteria: string[] = [''];
 
 	constructor( private searchService: SearchService ) { }
 
 	ngOnInit() { }
 
+	addToSearchCriteria(value) {
+		this.select.push(value);
+	}
+
+	removeFromSearchCriteria(value) {
+		let indexOfValue;
+		indexOfValue = this.select.forEach((element, index) => {
+			if(element === value) {
+				return index;
+			}
+		});
+		this.select.splice(indexOfValue, 1);
+	}
+
 	searchCityRecords(paramObject) {
 		this.searchService.retrieveData(paramObject)
-			.subscribe(response => 
-				this.data = response.json()
-			);
+			.subscribe(response => this.data = response);
 	}
 
 }
