@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ActivatedRoute } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
@@ -13,6 +13,10 @@ describe('UserPageComponent', () => {
   let component: UserPageComponent;
   let fixture: ComponentFixture<UserPageComponent>;
 
+  const fakeActivatedRoute = {
+    snapshot: { data: { 'hey': 'ho' } }
+  };
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
@@ -20,11 +24,13 @@ describe('UserPageComponent', () => {
         SearchComponent
       ],
       imports: [
+        RouterTestingModule,
         HttpClientModule,
-        ActivatedRoute,
         FormsModule
       ],
-      providers: [ UsersService ]
+      providers: [
+        UsersService
+      ]
     })
     .compileComponents();
   }));

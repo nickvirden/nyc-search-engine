@@ -47,6 +47,9 @@ const routes: Routes = [
     FormsModule,
     MaterializeModule
   ],
+  exports: [
+    RouterModule
+  ],
   providers: [
     UsersService,
     SearchService
