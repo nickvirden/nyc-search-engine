@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientModule } from '@angular/common/http';
 
 import { UsersListComponent } from './users-list.component';
-import { UsersService } from '../users.service';
+import { UsersService } from '../../services/users.service';
 
 describe('UsersListComponent', () => {
   let component: UsersListComponent;

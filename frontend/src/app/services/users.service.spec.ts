@@ -2,7 +2,7 @@
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { TestBed, async } from '@angular/core/testing';
 import { UsersService } from './users.service';
-import { User } from './types/user';
+import { User } from '../types/user';
 
 describe('UsersService', () => {
     let service: UsersService;

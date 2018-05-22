@@ -1,17 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Http } from '@angular/http';
-
 import { SearchService } from '../../services/search.service';
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.css']
+  styleUrls: ['./search.component.css'],
+  providers: [ SearchService ]
 })
 export class SearchComponent implements OnInit {
 
-	select: string[] = ['yey'];
+	select: string[] = [''];
 	where: string[];
 	order: string;
 	group: string;
@@ -39,8 +38,7 @@ export class SearchComponent implements OnInit {
 	}
 
 	removeFromSearchCriteria(value) {
-		let indexOfValue;
-		indexOfValue = this.select.indexOf(value);
+		let indexOfValue = this.select.indexOf(value);
 		this.select.splice(indexOfValue, 1);
 	}
 

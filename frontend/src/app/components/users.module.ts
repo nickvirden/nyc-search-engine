@@ -3,7 +3,7 @@ import { CommonModule }   from '@angular/common';
 import { FormsModule }    from '@angular/forms';
  
 import { UsersListComponent }    from './users-list/users-list.component';
-import { UsersDetailComponent }  from './users-detail/users-detail.component';
+import { UserPageComponent }  from './user-page/user-page.component';
  
 import { UsersService } from '../services/users.service';
  
@@ -17,7 +17,7 @@ import { UsersRoutingModule } from './users-routing.module';
   ],
   declarations: [
     UsersListComponent,
-    UsersDetailComponent
+    UserPageComponent
   ],
   providers: [ UsersService ]
 })

@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { NewUserFormComponent } from './new-user-form.component';
-import { UsersService } from '../users.service';
+import { UsersService } from '../../services/users.service';
 
 
 describe('NewUserFormComponent', () => {
