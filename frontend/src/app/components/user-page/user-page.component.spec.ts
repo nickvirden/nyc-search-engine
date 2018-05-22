@@ -1,6 +1,13 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { ActivatedRoute } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
 import { UserPageComponent } from './user-page.component';
+import { SearchComponent } from '../search/search.component';
+
+import { UsersService } from '../../services/users.service';
 
 describe('UserPageComponent', () => {
   let component: UserPageComponent;
@@ -8,7 +15,16 @@ describe('UserPageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UserPageComponent ]
+      declarations: [
+        UserPageComponent,
+        SearchComponent
+      ],
+      imports: [
+        HttpClientModule,
+        ActivatedRoute,
+        FormsModule
+      ],
+      providers: [ UsersService ]
     })
     .compileComponents();
   }));

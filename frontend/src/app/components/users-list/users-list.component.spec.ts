@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { UsersListComponent } from './users-list.component';
 import { UsersService } from '../../services/users.service';
@@ -13,7 +14,10 @@ describe('UsersListComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ UsersListComponent ],
       providers: [ UsersService ],
-      imports: [ HttpClientModule ]
+      imports: [
+        HttpClientModule,
+        FormsModule
+      ]
     })
     .compileComponents();
   }));
